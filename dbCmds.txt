@@ -1,0 +1,19 @@
+
+SELECT * FROM transactions WHERE userid = 1;
+
+SELECT symbol, shares, price FROM transactions WHERE userid = 1;
+
+SELECT symbol, SUM(shares)
+FROM transactions
+WHERE userid="1"
+GROUP BY symbol;
+
+SELECT DISTINCT symbol
+FROM transactions
+WHERE userid="1";
+
+SELECT symbol, SUM(shares)
+FROM transactions
+WHERE userid="1"
+GROUP BY symbol
+HAVING SUM(shares) > 0;
